@@ -8,7 +8,7 @@ public class Main {
         String expresion = usr.nextLine();
 
         try {
-            double resultado;
+            double resultado = 0;
             int operador = 0;
             int suma = expresion.indexOf('+');
             int resta = expresion.indexOf('-');
@@ -26,7 +26,11 @@ public class Main {
             double $primerOperando = Double.parseDouble(primerOperando);
             double $segundoOperando = Double.parseDouble(segundoOperando);
 
-            resultado = $primerOperando + $segundoOperando;
+            if(suma != -1) {resultado = $primerOperando + $segundoOperando;}
+            else if(resta != -1) {resultado = $primerOperando - $segundoOperando;}
+            else if(mult != -1) {resultado = $primerOperando * $segundoOperando;}
+            else if(div != -1) {resultado = $primerOperando / $segundoOperando;}
+
             System.out.println("el resultado es: " + resultado);
 
         } catch(Exception e) {
